@@ -1,0 +1,156 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Solitons}
+
+\section{Dark and Bright Solitons}
+
+\subsection{Gross-Pitaevskii Model}
+
+The many body Hamiltonian that describe a number N of interacting bosons with mass \textit{m} and confined by an external potential $V_{ext}(\textbf{r})$ is given in second quantization form in this way:
+
+\begin{equation}
+\begin{split}
+\hat{H} = & \int \diff{\textbf{r}} \hat{\Psi}^\dagger (\textbf{r}) \left[ -\frac{\hbar^2}{2m} \nabla^2 + V_{ext} (\textbf{r}) \right] \hat{\Psi} (\textbf{r})+ \\ & + \frac{1}{2} \int \diff{\textbf{r}} \diff{\textbf{r}^\prime} \hat{\Psi}^\dagger (\textbf{r}) \hat{\Psi}^\dagger (\textbf{r}^\prime) V(\textbf{r} - \textbf{r}^\prime) \hat{\Psi} (\textbf{r}) \hat{\Psi} (\textbf{r}^\prime)
+\end{split}
+\end{equation}
+
+where $\hat{\Psi}(\textbf{r})$ and $\hat{\Psi}^\dagger(\textbf{r})$ are the boson annihilation and creation operators and $V(\textbf{r} - \textbf{r}^\prime)$ is the two-body interaction potential. In the frame of mean-field approximation the field operator can be decomposed in $\hat{\Psi}(\textbf{r}, t) = \Psi(\textbf{r}, t) + \hat{\Psi}^\prime (\textbf{r}, t)$. The function $\Psi(\textbf{r}, t)$ is usually complex and has the function of an order parameter, it is also called the macroscopic wavefunction of the condensate. Instead the function $\hat{\Psi}^\prime (\textbf{r}, t)$ describe the non condensate part, which can be considered negligible at temperatures lower than $T_c$.\\ 
+To obtain the BEC wavefunction one apply the Heisenberg equation $i\hbar \frac{\partial}{\partial t} \hat{\Psi}(\textbf{r}, t) = [\hat{\Psi},\hat{H}]$, for the field operator $\hat{\Psi}(\textbf{r}, t)$:
+
+\begin{equation}
+i\hbar \frac{\partial}{\partial t} \hat{\Psi}(\textbf{r}, t) = \left[ -\frac{\hbar^2}{2m} \nabla^2 + V_{ext} (\textbf{r}) + \int \diff{\textbf{r}^\prime} \hat{\Psi}^\dagger (\textbf{r}^\prime, t) V(\textbf{r} - \textbf{r}^\prime) \hat{\Psi} (\textbf{r}^\prime, t) \right] \hat{\Psi}(\textbf{r}, t)
+\end{equation}
+
+Then one can simplify the interatomic potential $V(\textbf{r} - \textbf{r}^\prime)$. In the case of a dilute ultracold gas, with binary collisions at low energy, the collisions are characterized by the s-wave scattering length \textit{a}. In this way the interatomic potential can be replaced by an effective interaction potential. It is well described by a delta-function potential $V(\textbf{r} - \textbf{r}^\prime) = g \delta(\textbf{r} - \textbf{r}^\prime)$, the coupling constant \textit{g} is defined as $g = 4 \pi \hbar^2 a / m$.\\
+Substituting the interaction potential with the effective one and replacing the field operator $\hat{\Psi}$ with the classical one $\Psi$ one obtain the Gross-Pitaevskii equation:
+
+\begin{equation}
+i\hbar \frac{\partial}{\partial t} \Psi(\textbf{r}, t) = \left[ -\frac{\hbar^2}{2m} \nabla^2 + V_{ext} (\textbf{r}) +  g |\Psi (\textbf{r}, t)|^2 \right] \Psi(\textbf{r}, t)
+\label{eq:gpeq}
+\end{equation}
+
+The complex function $\Psi(\textbf{r}, t)$ can be expressed as in terms of the density of the condensate $n(\textbf{r}, t) \equiv |\Psi(\textbf{r}, t)|^2$ and phase of the condensate $S(\textbf{r}, t)$ as:
+
+\begin{equation}
+\Psi(\textbf{r}, t) = \sqrt{n(\textbf{r}, t)} \exp{i S(\textbf{r}, t)}
+\label{eq:becwf}
+\end{equation}
+
+The phase $S(\textbf{r}, t)$ determines also the atomic velocity, from the formula of the current density $\textbf{j} = \hbar (\Psi^\star \nabla \Psi - \Psi \nabla \Psi^\star) / 2mi$ one obtain the hydrodynamic form $\textbf{j} = n \textbf{v}$, with atomic velocity $\textbf{v}(\textbf{r}, t) = \hbar \nabla S(\textbf{r}, t) /m$. Inserting \ref{eq:becwf} into \ref{eq:gpeq} one finds the explicit equation for the phase of the order parameter:
+
+\begin{equation}
+\hbar \frac{\partial}{\partial t} S + \left( \frac{1}{2}m\textbf{v}^2 + V_{ext} + gn - \frac{\hbar^2}{2m\sqrt{n}} \nabla^2 \sqrt{n} \right) = 0
+\label{eq:gpp}
+\end{equation}
+
+The last term on the right-hand side of the equation correspond to the so called quantum pressure term, direct consequence of the Heisenberg uncertainty principle.\\
+The GP model conserves the total number of atoms, \textit{N}, and is used as normalization of the wavefunction:
+
+\begin{equation}
+N = \int |\Psi(\textbf{r}, t)|^2 \diff{\textbf{r}}
+\end{equation}
+
+The functional of the energy \textit{E} is dynamically conserved and is given by:
+
+\begin{equation}
+E = \int \diff{\textbf{r}} \left[ \frac{\hbar^2}{2m} |\nabla \Psi|^2 + V_{ext} |\Psi|^2 + \frac{1}{2} g |\Psi|^4 \right]
+\end{equation}
+
+The GP equation possesses two constants of motion, the number of atoms \textit{N} and the energy of the system \textit{E}, if the external potential $V_{ext}$ is constant in time.\\
+The GP equation in the case of stationary solutions where the condensate wavefunction evolves in time as follow:
+
+\begin{equation}
+\Psi(\textbf{r}, t) = \Psi(\textbf{r}) \exp(-\frac{i\mu t}{\hbar})
+\end{equation}
+ 
+The time evolution is determined by the chemical potential:
+
+\begin{equation}
+\mu = \frac{\partial E}{\partial N}
+\end{equation}
+
+\subsection{Thomas-Fermi Limit}
+
+In case of a slowly varying density in space the quantum pressure term in Eq.\ref{eq:gpp} can be neglected. Neglecting the quantum pressure term one obtain a new expression for the gradient of the phase:
+
+\begin{equation}
+m \frac{\partial}{\partial t} \textbf{v} + \nabla \left( \frac{1}{2}m\textbf{v}^2 + V_{ext} + gn \right) = 0
+\end{equation}
+
+Considering \textit{R} the typical distance of the density variation in the system, such distance can be the size of the condensate if the interest is in the ground state of the system. The quantum pressure term is proportional as $\nabla^2 \sqrt{n} / \sqrt{n} \sim R^{-2}$, and becomes negligible if \textit{R} is much larger than the characteristic length:
+
+\begin{equation}
+\xi = \frac{\hbar}{\sqrt{2mgn}}
+\label{eq:hl}
+\end{equation}
+
+The healing length \ref{eq:hl} is the distance over which the kinetic energy $\sim \hbar^2/2m\textbf{r}^2$ and the interaction energy $\sim $ balance. In the Thomas-Fermi limit with $\textbf{v} = 0$ or neglecting the kinetic energy term, Eq.\ref{eq:hl} become:
+
+\begin{equation}
+gn(\textbf{r}) + V_{ext}(\textbf{r}) = \mu
+\label{eq:cp}
+\end{equation}
+
+where $\mu$ is the ground state chemical potential, Eq.\ref{eq:cp} express the condition of local equilibrium and in the absence of an external potential could be expressed by the Bogoliubov relation $\mu = gn$.
+
+\subsection{GP Ground State}
+
+
+
+\subsection{GP Equation in Lower Dimensions}
+
+The potential felt by the atoms depends on the type of trapping performed, i.e. magnetic or optical. 
+In the case of a standard magnetic trap the magnetic external potential assumes the typical harmonic form:
+
+\begin{equation}
+V_{MT}(\textbf{r}) = \frac{1}{2} m (\omega_x^2x^2 + \omega_y^2y^2 + \omega_z^2z^2)
+\end{equation}
+
+where $\omega_x, \omega_y, \omega_z$ are the trap frequencies along the three directions. Then the geometry of the trap and the shape of the condensate can range from isotropic to strongly anisotropic forms. In the case with $\omega_x = \omega_y \equiv \omega_r \approx \omega_z$ the trap is isotropic and the BEC is spherical, while in case with $\omega_z < \omega_r$ or $\omega_z > \omega_r$ the trap is anisotropic and the BEC is, respectively, elongated "cigar shaped" or flattened "pancake shaped". The strongly anisotropic cases, $\omega_z \ll \omega_r$ or $\omega_z \gg \omega_r$, are connected to effectively lower dimensional BECs, respectively quasi one-dimensional and quasi two-dimensional.\\
+In the case the transverse oscillator length $a_{ho,r} \equiv \sqrt{\hbar / m \omega_r} < \xi$, the transverse confinement is so tight to reduce the dynamic of the cigar-shaped BEC to an effective 1D dynamic, for a sufficiently small trapping frequency ratios $\omega_z / \omega_r$. Similarly for the pancake-shaped BEC, the condition for a dimensional reduction to an effective 2D GP model is $a_{ho,z} < \xi$ along with the requirement of  sufficiently small frequency ratios $\omega_r / \omega_z$.\\
+In the quasi-1D setting the wavefunction $\Psi$ can be decomposed in a longitudinal part, along \textit{z}, and a radial part, along the (\textit{x,y}) plane. The solution of Eq.\ref{eq:gpeq} can be in the form:
+
+\begin{equation}
+\Psi(\textbf{r}, t) = \psi(z,t) \phi(r,t) \exp(-i\mu t)
+\label{eq:wf1d2d}
+\end{equation}
+
+where $r^2 \equiv x^2 + y^2$, the chemical potential $\mu$ and the radial wavefunction $\phi(r,t)$ are involved in the auxiliary problem for the transverse quantum harmonic oscillator:
+
+\begin{equation}
+\frac{\hbar^2}{2m} \nabla^2_\perp \phi - \frac{1}{2} m \omega_r^2 r^2 \phi + \mu \phi = 0
+\end{equation}
+
+where $\nabla^2_\perp \equiv \partial^2 / \partial x^2 +  \partial^2 / \partial y^2$.\\
+Substituting the decomposed wavefunction \ref{eq:wf1d2d} mentioned before into the GP equation \ref{eq:gpeq} and averaging over the \textit{r}-direction, one obtain the 1D GP equation:
+
+\begin{equation}
+i\hbar \frac{\partial}{\partial t} \psi(z,t) = \left[ -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial z^2} + V(z) + \tilde{g} |\psi|^2 \right] \psi(z,t)
+\end{equation}
+
+where $\tilde{g}$ is the effective 1D coupling constant $\tilde{g} = g / 2\pi a_r^2 = 2a \hbar \omega_r$ and $V(z) = (1/2)m \omega_z^2 z^2$.
+
+
+\subsection{Bright Solitons}
+
+
+\subsection{Dark Solitons}
+
+
+\section{Spinoral Condensates}
+
+\subsection{Spinorial Wavefunxtion}
+
+\subsection{Soliton with Spinorial Order Parameter}
+
+\subsection{Miscibility}
+
+
+\section{Development Atomic Manipulation Techniques for Solitons in Spinorial Condensates}
+
+
+
+
+\end{document}

@@ -1,0 +1,112 @@
+\documentclass[../thesis.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Optical Dipole Trap}
+
+The optical dipole trap is created exploiting the reactive part of the mean radiative force. The reactive force arises from the dependency of the induced atomic dipole moment with the intensity gradient of the light field. Since the force is conservative it can be derived from a potential and its minima can be used to trap the atoms. A limit of this kind of trap is the absorptive part of the dipole interaction which leads to photon scattering of the trapping light.\\
+
+\section{Dipole Potential}
+
+The dipole moment of the atom \textbf{p} is induced by an external field \textbf{E}, provided by laser light, the dipole oscillates at the driving frequency $\omega$. In complex notation the electric field is expressed as:
+
+\begin{equation}
+\textbf{E}(\textbf{r},t) = \hat{\text{e}} \tilde{E}(\textbf{r}) \exp(-i \omega t) + \text{c.c.}
+\end{equation}
+
+and the dipole induced dipole moment \textbf{p} as:
+
+\begin{equation}
+\textbf{p}(\textbf{r},t) = \hat{\text{e}} \tilde{p}(\textbf{r}) \exp(-i \omega t) + \text{c.c.}
+\end{equation}
+
+where $\hat{\text{e}}$ is the unit polarization vector and the amplitude of the dipole moment $\tilde{p}$ is related to the amplitude of the electric field $\tilde{E}$ by the complex polarizability $\alpha$ that depends on the driving frequency $\omega$:
+
+\begin{equation}
+\tilde{p} = \alpha \tilde{E}
+\end{equation}
+
+The interaction potential of the induced dipole moment is given by:
+
+\begin{equation}
+\text{U}_{dip} = - \frac{1}{2} \left\langle \textbf{p} \cdot \textbf{E} \right\rangle = - \frac{1}{2 \epsilon_0 c} \text{Re}(\alpha) \text{I}
+\end{equation}
+
+where the intensity is defined as $\text{I} = 2 \epsilon_0 c |\tilde{E}|^2$ and the term in the brackets denote a time average over the rapid oscillating terms. In this way the fast oscillating terms:
+
+\begin{equation}
+\textbf{p}^{(\pm)} \cdot \textbf{E}^{(\pm)} \sim \exp(\mp i2 \omega t)
+\end{equation}
+
+are dropped out of the average, since they rotate at twice the optical frequency, too fast for a mechanical response from the atom. The terms of the form:
+
+\begin{equation}
+\textbf{p}^{(\pm)} \cdot \textbf{E}^{(\mp)} \sim 1
+\end{equation}
+
+are almost constants then are kept.\\
+The potential energy of the induced dipole moment is proportional to the intensity $\text{I}$ of the light field and to the real part of the polarizability, which describes the in-phase component of the dipole oscillation being responsible for the dispersion properties of the interaction.\\
+The dipole force is calculated taking the gradient of the interaction potential:
+
+\begin{equation}
+\textbf{F}_{dip} (\textbf{r}) = - \nabla \text{U}_{dip} (\textbf{r}) = \frac{1}{2 \epsilon_0 c} \text{Re}(\alpha) \nabla \text{I}(\textbf{r})
+\end{equation}
+
+The power absorbed by the induced dipole and re-emitted as dipole radiation depends on the intensity and on the imaginary part of the polarizability. The scattering rate is given by diving the scattered power by the single scattered photon energy:
+
+\begin{equation}
+\Gamma_{sc} (\textbf{r}) = \frac{\text{P}_{abs}}{\hbar \omega} = \frac{1}{\hbar \epsilon_0 c} \text{Im}(\alpha) \text{I}(\textbf{r})
+\end{equation}
+
+To calculate the polarizability $\alpha$ of an atom the Lorentz's model of a classical oscillator is going to be applied. The electron is considered bounded elastically to the atom with an oscillation frequency $\omega_0$ corresponding to the optical transition frequency, damping results from the dipole radiation of the oscillating electron. Then the polarizability is obtained by the integration of the equation of motion for the driven oscillator:
+
+\begin{equation}
+\ddot{x} + \Gamma_{\omega} \dot{x} + \omega_0^2 x = -\frac{e E(t)}{m_e}
+\end{equation}
+
+The result for the polarizability is the following:
+
+\begin{equation}
+\alpha = \frac{e^2}{m_e} \frac{1}{\omega_0^2 - \omega^2 - i\omega \Gamma}
+\end{equation}
+
+The damping rate $\Gamma$ can be calculated in a semiclassical approach considering a two-level quantum system interacting with a classical radiation field. In this way the damping rate is determined by the dipole matrix element between ground and excited state:
+
+\begin{equation}
+\Gamma = \frac{\omega_0^3}{3 \pi \epsilon_0 \hbar c^3} |\bra{e} \mu \ket{g}|^2
+\end{equation}
+
+A difference between the classical oscillator and the quantum oscillator is the possible occurrence of saturation, the excited state is strongly populated.\\
+In the case dipole trapping the light is far-detuned and with very low-saturation, with a low scattering rate $\Gamma_{sc} \ll \Gamma$. Within this case, the dipole potential and the scattering rate take the following form:
+
+\begin{equation}
+\text{U}_{dip} = - \frac{3 \pi c^2}{2 \omega_0^3} \left( \frac{\Gamma}{\omega_0 - \omega} + \frac{\Gamma}{\omega_0 + \omega} \right) \text{I}(\textbf{r})
+\end{equation}
+
+\begin{equation}
+\Gamma_{sc} =  \frac{3 \pi c^2}{2 \hbar \omega_0^3} \left( \frac{\omega}{\omega_0} \right)^3 \left( \frac{\Gamma}{\omega_0 - \omega} + \frac{\Gamma}{\omega_0 + \omega} \right)^2 \text{I}(\textbf{r})
+\end{equation}
+
+In the case the laser detuning is relatively close to resonance $\omega_0$, the modulus of the detuning $\Delta \equiv \omega - \omega_0$ is much less than the resonant frequency $|\Delta| \ll \omega_0$ and $\omega / \Omega_0 \approx 1$. Under this condition the so called counter-rotating term, in the previous equations, can be neglected, under the rotating-wave approximation. Then the formulas becomes:
+
+\begin{equation}
+\text{U}_{dip} = - \frac{3 \pi c^2}{2 \omega_0^3} \left( \frac{\Gamma}{\Delta} \right) \text{I}(\textbf{r})
+\end{equation}
+
+\begin{equation}
+\Gamma_{sc} =  \frac{3 \pi c^2}{2 \hbar \omega_0^3} \left( \frac{\Gamma}{\Delta} \right)^2 \text{I}(\textbf{r})
+\end{equation}
+
+Thus the characteristics of the dipole trap are determined by the detuning $\Delta$ and by the intensity of the laser light.  The sign of the detuning determine if the interaction is repulsive or attractive since it determine the sign of the dipole potential. In the case of a "red" detuning $\Delta < 0$ the potential is attractive and the minima is placed in the position with the maximum light intensity. In the other case, with a "blue" detuning $\Delta > 0$ the potential is repulsive and the minima of the potential corresponds with the minima of the light intensity. The potential depth scales as function of the intensity and the detuning $\text{I}/ \Delta$, whereas the scattering rate scales as $\text{I}/ \Delta^2$.
+
+\section{Alkali Atoms}
+
+The electronic transition structure of a real atom is more complex than of a two-level system, the dipole potential depends on the sub-structure of the electronic states. To treat a multi-level atom with a oscillator model as before the atomic polarizability is meant to be state-dependent.\\
+In the case of alkali atoms, the relevant level scheme for the transition is of the kind $ns \rightarrow np$. In the case of sodium $^{23} \text{Na}$ the spin orbit coupling in the excited state creates the D line doublet $^2 S_{1/2} \rightarrow ^2 P_{1/2}, ^2 P_{3/2}$ with an energy splitting $\hbar \Delta^\prime_{FS}$. The coupling with the nuclear spin $\text{I} = 3/2$ produce the hyperfine structure of the ground and excited states with energies splitting $\hbar \Delta_{HFS}$ and $\hbar \Delta^\prime_{HFS}$ and scales as $\Delta^\prime_{FS} \gg \Delta_{HFS} \gg \Delta^\prime_{HFS}$. A general result for the potential for a ground state with total angular momentum $F$ and magnetic quantum number $m_F$, valid for circular and linear polarized light, valid as long as the detuning is large compared to the excited-state hyperfine splitting $\hbar \Delta^\prime_{HFS}$:
+
+\begin{equation}
+\text{U}_{dip} = \frac{\pi c^2 \Gamma}{2 \omega_0^3} 
+\end{equation}
+
+
+\end{document}

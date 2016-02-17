@@ -1,0 +1,9 @@
+set term postscript eps color enhanced
+set output "phase_imprint.eps"
+
+set xrange [-150:150]
+
+set multiplot layout 1, 2
+set xlabel "Intensity [I0/IS]"
+set ylabel 
+
